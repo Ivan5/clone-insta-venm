@@ -16,7 +16,8 @@ const userSchema = mongoose.Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   account_created: {
     type: String,
@@ -24,7 +25,6 @@ const userSchema = mongoose.Schema({
   }
 });
 
-const userModel = mongoose.model("user", userSchema);
 userSchema.pre("save", next => {
   let user = this;
   if (!user.isModified("password")) return next();
@@ -48,4 +48,5 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
   });
 };
 
+const userModel = mongoose.model("user", userSchema);
 module.exports = userModel;
