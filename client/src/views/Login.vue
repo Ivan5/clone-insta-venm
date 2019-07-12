@@ -5,6 +5,7 @@
         Insta
         <span>Clone</span>
       </h3>
+      <h4>Login</h4>
     </header>
     <main class="form-group">
       <input type="text" name id v-model="email" placeholder="Email" />
@@ -48,6 +49,14 @@ export default {
       span {
         font-weight: 300;
       }
+    }
+    h4 {
+      color: #888;
+      font-size: 24px;
+      text-align: center;
+      font-weight: 300;
+      margin: 0;
+      padding: 0;
     }
   }
 
